@@ -16,6 +16,9 @@ v0.5.6 running as `ghcr.io/debpalash/voicestudio:latest` (Docker, CUDA).
 | `KittenML/kitten-tts-mini-0.8` | 110 MB | Instant English preset voices, CPU |
 | Argos offline packs | ~100–200 MB each | `en↔es`, `en→ar`, `ar→en` translators |
 
+> What each model costs in VRAM/RAM/CPU, and what smaller machines need:
+> see **[HARDWARE.md](HARDWARE.md)**.
+
 ## Experiments (in order)
 
 ### 1. Voice clone → new speech (`audio/01-clone-playwright-voice.wav`, 11.96 s)
