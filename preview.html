@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VoiceStudio Experiments — Local AI Voice Lab</title>
+<style>
+  :root { --bg:#0b0e14; --card:#141926; --line:#232c44; --txt:#e8ecf5; --mut:#9aa4bf; --acc:#7aa2ff; --grn:#3ddc84; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--txt); font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; line-height:1.6; }
+  header.hero { padding:64px 24px 40px; text-align:center; background:radial-gradient(800px 320px at 50% -60px,#1c2a55,transparent); }
+  header.hero h1 { font-size:2.4rem; margin:.2em 0; }
+  header.hero p.sub { color:var(--mut); max-width:760px; margin:0 auto; font-size:1.08rem; }
+  .badges { margin-top:16px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap; }
+  .badges span { border:1px solid var(--line); border-radius:999px; padding:4px 14px; font-size:.85rem; color:var(--grn); }
+  main { max-width:1020px; margin:0 auto; padding:0 24px 80px; }
+  section { margin-top:48px; }
+  h2 { font-size:1.5rem; border-bottom:1px solid var(--line); padding-bottom:8px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px; }
+  .card h3 { margin:.2em 0 .4em; font-size:1.05rem; }
+  .card p { color:var(--mut); font-size:.93rem; margin:.3em 0 .8em; }
+  audio { width:100%; margin-top:6px; }
+  video.demo { width:100%; border-radius:14px; border:1px solid var(--line); background:#000; }
+  .shots { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; }
+  .shots figure { margin:0; background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+  .shots img { width:100%; display:block; }
+  .shots figcaption { padding:10px 14px; color:var(--mut); font-size:.88rem; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th,td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--line); }
+  th { color:var(--mut); font-weight:600; }
+  blockquote { border-left:3px solid var(--acc); margin:12px 0; padding:6px 14px; color:var(--mut); font-style:italic; }
+  footer { text-align:center; color:var(--mut); padding:40px 20px; font-size:.88rem; }
+  a { color:var(--acc); }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div style="font-size:2.6rem">🎙️</div>
+  <h1>VoiceStudio Experiments</h1>
+  <p class="sub"><strong>A complete AI voice studio running on one local computer.</strong>
+  Voice cloning, voice design, transcription, video dubbing in Spanish and Arabic,
+  multi-voice stories and audiobooks — RTX&nbsp;3090, ~8.6&nbsp;GB of models,
+  zero cloud, zero API keys for speech. Every claim on this page plays a real file below.</p>
+  <div class="badges"><span>100% local-first</span><span>RTX 3090 tested</span><span>15 audio artifacts</span><span>MIT docs</span></div>
+</header>
+<main>
+
+<section>
+  <h2>🎬 Watch the tour (30 seconds)</h2>
+  <video class="demo" controls preload="metadata" poster="screenshots/tour-01-clone.png">
+    <source src="demo.mp4" type="video/mp4">
+    Your browser cannot play video — <a href="demo.mp4">download demo.mp4</a>.
+  </video>
+  <p style="color:var(--mut)">Clone → Design → Transcribe → Audiobooks → Tools → Integrations → Batch → Projects → Dub → Story, ten workspaces in thirty seconds.</p>
+</section>
+
+<section>
+  <h2>🌱 Beginner? Start here (2 minutes)</h2>
+  <div class="grid">
+    <div class="card"><h3>1. Ears (ASR)</h3><p>Sound → text. Upload a recording, get the sentence back. Play experiment 6's source idea below, then read its transcript.</p></div>
+    <div class="card"><h3>2. Brain (translation)</h3><p>Text in one language → text in another. Offline Argos packs do English ↔ Spanish and English ↔ Arabic.</p></div>
+    <div class="card"><h3>3. Mouth (TTS)</h3><p>Text → spoken audio. <em>Cloning</em> copies a person from 5–15 seconds; <em>design</em> invents one from words.</p></div>
+  </div>
+  <p>A <strong>dub</strong> is simply ears → brain → mouth, timed to video. A <strong>story</strong> is one mouth, many voices. Now press play on everything below — you will hear each stage.</p>
+</section>
+
+<section>
+  <h2>🔊 Listen — every experiment</h2>
+  <div class="grid">
+    <div class="card"><h3>01 · Cloned voice, new sentence (11.9s)</h3><p>7-second sample → reusable voice.</p><audio controls preload="none" src="audio/01-clone-playwright-voice.wav"></audio></div>
+    <div class="card"><h3>02 · Designed voice (7.1s)</h3><p>Middle-aged, low pitch — no sample needed.</p><audio controls preload="none" src="audio/02-design-first-take.wav"></audio></div>
+    <div class="card"><h3>03 · KittenTTS preset (11.2s)</h3><p>Instant English, CPU-only, no cloning.</p><audio controls preload="none" src="audio/03-kittentts-default-voice.wav"></audio></div>
+    <div class="card"><h3>04 · Spanish dub mix</h3><p>Full pipeline: transcribe → translate → speak → mux.</p><audio controls preload="none" src="audio/04-dub-spanish-mix.wav"></audio></div>
+    <div class="card"><h3>05–06 · Arabic segments (6.0s + 8.7s)</h3><p>First Arabic render, slot-fitted.</p><audio controls preload="none" src="audio/05-dub-arabic-seg1.wav"></audio><audio controls preload="none" src="audio/06-dub-arabic-seg2.wav"></audio></div>
+    <div class="card"><h3>08 · Arabic v2, natural rate (15.4s)</h3><p>Fixed wording, no speedup. Compare with 05–06.</p><audio controls preload="none" src="audio/08-dub-arabic-v2-natural-rate.wav"></audio></div>
+    <div class="card"><h3>07 · Lighthouse audiobook (0:59)</h3><p>Chapters, pauses, laughter and sigh markup.</p><audio controls preload="none" src="audio/07-lighthouse-story.mp3"></audio></div>
+    <div class="card"><h3>09 · Pirate &amp; Pixie, 3 voices (0:24)</h3><p>Narrator + villain + child, one render.</p><audio controls preload="none" src="audio/09-pirate-and-pixie-3voices.mp3"></audio></div>
+    <div class="card"><h3>10–13 · Design Guy sessions</h3><p>Trailer, ad, story opening, secret — same voice.</p><audio controls preload="none" src="audio/10-design-guy-trailer.wav"></audio><audio controls preload="none" src="audio/11-design-guy-ad.wav"></audio><audio controls preload="none" src="audio/12-design-guy-story.wav"></audio><audio controls preload="none" src="audio/13-design-guy-secret.wav"></audio></div>
+  </div>
+</section>
+
+<section>
+  <h2>🖼️ See — the workspaces</h2>
+  <div class="shots">
+    <figure><img loading="lazy" src="screenshots/tour-01-clone.png" alt="Clone workspace"><figcaption><strong>Clone</strong> — drop 5–15 s, get a voice.</figcaption></figure>
+    <figure><img loading="lazy" src="screenshots/tour-02-design.png" alt="Design workspace"><figcaption><strong>Design</strong> — describe a voice, synthesize.</figcaption></figure>
+    <figure><img loading="lazy" src="screenshots/tour-03-transcribe.png" alt="Transcribe workspace"><figcaption><strong>Transcribe</strong> — upload, record, dictate.</figcaption></figure>
+    <figure><img loading="lazy" src="screenshots/tour-04-audiobook.png" alt="Audiobook workspace"><figcaption><strong>Audiobook</strong> — chapters, cast, M4B/MP3.</figcaption></figure>
+    <figure><img loading="lazy" src="screenshots/tour-05-tools.png" alt="Tools"><figcaption><strong>Tools</strong> — Directorial AI, rate fit, compare, convert.</figcaption></figure>
+    <figure><img loading="lazy" src="screenshots/tour-06-integrations.png" alt="Integrations"><figcaption><strong>Integrations</strong> — MCP, APIs, Twilio.</figcaption></figure>
+    <figure><img loading="lazy" src="screenshots/tour-07-batch.png" alt="Batch dubbing"><figcaption><strong>Batch</strong> — whole video queues.</figcaption></figure>
+    <figure><img loading="lazy" src="screenshots/tour-08-projects.png" alt="Projects"><figcaption><strong>Projects</strong> — every artifact, searchable.</figcaption></figure>
+    <figure><img loading="lazy" src="screenshots/02-dub-spanish-complete.png" alt="Spanish dub complete"><figcaption><strong>Dub ES complete</strong> — the money shot.</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>✨ Features at a glance</h2>
+  <table>
+    <tr><th>Feature</th><th>What you do</th><th>Try</th></tr>
+    <tr><td>🎤 Clone</td><td>Copy a voice from a short sample</td><td>audio/01, 10–13</td></tr>
+    <tr><td>🎨 Design</td><td>Invent a voice from words</td><td>audio/02</td></tr>
+    <tr><td>⚡ Presets</td><td>8 instant English voices, CPU</td><td>audio/03</td></tr>
+    <tr><td>🎞️ Dub ES</td><td>Video in Spanish, fully local</td><td>audio/04</td></tr>
+    <tr><td>🌍 Dub AR</td><td>Arabic speech + natural timing fix</td><td>audio/05–06, 08</td></tr>
+    <tr><td>🎧 Transcribe</td><td>3 engines, same clips compared</td><td>README §6</td></tr>
+    <tr><td>📖 Stories</td><td>Multi-voice scripts → M4B</td><td>audio/07, 09</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>🧑‍🤝‍🧑 Who is this for</h2>
+  <div class="grid">
+    <div class="card"><h3>🎬 YouTubers</h3><p>Spanish + Arabic voice tracks overnight, no per-minute bill.</p></div>
+    <div class="card"><h3>📚 Storytellers</h3><p>Villain, child, narrator — one render, chapters included.</p></div>
+    <div class="card"><h3>🎙️ Podcasters</h3><p>Clone yourself once; generate pickups forever.</p></div>
+    <div class="card"><h3>🧏 Note-takers</h3><p>Recordings in, private text out, offline.</p></div>
+    <div class="card"><h3>🛠️ Builders</h3><p>Reproduce via API, extend with models. See README + HARDWARE.md.</p></div>
+    <div class="card"><h3>🎓 Students</h3><p>Hear the ASR → translate → TTS chain, then explain it aloud.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>🧠 Models &amp; hardware</h2>
+  <p>OmniVoice 2.4 GB · Whisper large-v3 2.9 GB · Turbo 1.6 GB · sherpa-tiny 245 MB · Parakeet 682 MB · KittenTTS 110 MB · Argos pairs ~100–200 MB. Total ≈ 8.6 GB. Sweet spot: 8 GB+ VRAM NVIDIA + 16 GB RAM. Full table: <a href="HARDWARE.md">HARDWARE.md</a>. Reproduce steps: <a href="README.md#-reproduce-it-yourself">README</a>.</p>
+</section>
+
+</main>
+<footer>Local-first voice AI — every sound on this page was rendered on one RTX&nbsp;3090. See <a href="README.md">README</a> for transcripts, licenses and methods.</footer>
+</body>
+</html>
