@@ -76,6 +76,12 @@ very-low), child (Gallery archetype **The Pixie**, very-high). Archetypes join
 via Gallery → Use voice → per-line `[voice:<id>]` inline tags. Zero downloads —
 archetype voices render through the local OmniVoice engine.
 
+### 9. "Design Guy" sessions (`audio/10`–`13`)
+The voice from experiment 2 (middle-aged, low pitch) cloned into a reusable
+profile (*Design Guy*, cloned from `02-design-first-take.wav`), then four new
+takes: movie trailer (`10`, 4.4 s), comedy ad (`11`, 6.7 s), story opening
+(`12`, 6.1 s), whispered-style secret (`13`, 6.5 s).
+
 ## Reproduce
 
 ```sh
