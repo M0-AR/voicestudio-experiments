@@ -69,6 +69,13 @@ rendered via the API.
 Sample story *"The Lighthouse at Wits' End"* (2 chapters, 151 words, pauses and
 `[laughter]`/`[sigh]` markup) → M4B audiobook with chapters.
 
+### 8. Multi-voice story (`audio/09-pirate-and-pixie-3voices.m4b`, 0:24 + `screenshots/04`)
+*"The Pirate and the Pixie"* — 4 lines, 3 voices in one render: narrator
+(VoiceStudio Demo Voice), villain (Gallery archetype **Captain Crusty**, elderly
+very-low), child (Gallery archetype **The Pixie**, very-high). Archetypes join
+via Gallery → Use voice → per-line `[voice:<id>]` inline tags. Zero downloads —
+archetype voices render through the local OmniVoice engine.
+
 ## Reproduce
 
 ```sh
