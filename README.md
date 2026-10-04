@@ -191,6 +191,28 @@ docker compose -f deploy/docker-compose.yml --profile gpu up
 #    Clone a voice → Design → Transcribe → Dub → Stories.
 ```
 
+## ⚖️ VoiceStudio vs ElevenLabs — honest comparison
+
+[ElevenLabs](https://elevenlabs.io) is the commercial reference: best-in-class
+voice quality, zero setup, works from any browser. This lab exists to answer one
+question — *how close can you get for $0, on your own hardware, with nobody
+else hearing your audio?* Prices below verified September 2026.
+
+| | VoiceStudio (this lab) | ElevenLabs |
+|---|---|---|
+| **Price** | $0 forever (electricity only) | Free trial ~10 min/mo, then $6–$990/mo; ~$0.17–0.20 per finished minute |
+| **Limits** | Unlimited renders; only your GPU speed caps you | Monthly credit pool (e.g. 30k ≈ 30 min on Starter); every regenerate re-bills; dubbing burns ~13,500 credits/min |
+| **Privacy** | Audio/text never leave your PC | Audio + text go to their cloud by design |
+| **Offline** | Yes, after one-time model downloads | No — browser + account + connection required |
+| **Voice cloning** | 5–15 s sample, unlimited voices | Instant cloning from Starter ($6); single best-in-class quality |
+| **Dubbing** | 1 language per run, offline translators | 29 languages, polished Dubbing Studio, per-minute billing |
+| **Weak spots here** | Needs a gaming-grade GPU for speed; Arabic needed manual fixes (see §5b) | Costs money forever; free tier is non-commercial with attribution |
+
+Rule of thumb: ElevenLabs wins on polish and convenience; this setup wins on
+cost (unlimited), privacy (total), and ownership (yours). For drafts, bulk
+work, private material, or learning — local wins. For the final 5% of
+commercial polish on one hero video — rent the cloud for that render.
+
 ## ❓ FAQ
 
 **Do I need the internet?** Only to download models once. After that, unplug —
