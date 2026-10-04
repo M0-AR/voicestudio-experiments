@@ -40,11 +40,18 @@ Designed voice (Narrator, middle-aged · low pitch), script:
 Status went Extracting → Transcribing → Translations ready → **Dub complete**.
 Segments: 0:00–0:04.5 and 0:04.8–0:11.0.
 
-### 5. Arabic TTS (`audio/05-dub-arabic-seg1.wav` 6.0 s, `audio/06-dub-arabic-seg2.wav` 8.7 s)
-Argos `en→ar` translation rendered to Arabic speech with OmniVoice.
-Finding: the UI dub picker blocks generic "Arabic" (*Choose a supported language*)
-because the engine's 646 display names list dialects but no plain "Arabic" —
-the backend itself synthesizes `ar` fine, so this went through the API.
+### 5b. Arabic v2 — natural rate (`audio/08-dub-arabic-v2-natural-rate.wav`, 15.4 s mix)
+The v1 Arabic sounded rushed because the job used `strict_slot` timing: 6.0 s of
+speech squeezed into a 4.7 s slot (1.28×) and 8.7 s into 6.6 s (1.32×). Per 2026
+best practice (tashkeel-aware text + natural timing over slot compression), v2
+fixes two things: corrected MSA wording (التلاعب بالفيديو → دبلجة الفيديو,
+feminine افتحي/ابدأي → neutral افتح/ابدأ, آلتك → جهازك) and re-rendered with
+`stretch_video` timing — speech at natural rate (6.71 s + 8.03 s), video yields
+instead of the voice. Same Speaker-1 clone for comparability.
+Finding: the UI dub page blocks generic "Arabic" (*Choose a supported language*)
+because the engine's 646 display names hold 21 dialects but no plain "Arabic";
+the backend (`supported_languages = ["multi"]`) synthesizes `ar` fine, so v2
+rendered via the API.
 
 ### 6. Transcription shootout (Whisper Tiny vs Parakeet v3, same clips)
 `en_conversational.wav` → **both word-perfect**:
