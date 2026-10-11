@@ -72,11 +72,17 @@
     <div class="card"><h3>02 · Designed voice (7.1s)</h3><p>Middle-aged, low pitch — no sample needed.</p><audio controls preload="none" src="audio/02-design-first-take.wav"></audio></div>
     <div class="card"><h3>03 · KittenTTS preset (11.2s)</h3><p>Instant English, CPU-only, no cloning.</p><audio controls preload="none" src="audio/03-kittentts-default-voice.wav"></audio></div>
     <div class="card"><h3>04 · Spanish dub mix</h3><p>Full pipeline: transcribe → translate → speak → mux.</p><audio controls preload="none" src="audio/04-dub-spanish-mix.wav"></audio></div>
-    <div class="card"><h3>05–06 · Arabic segments (6.0s + 8.7s)</h3><p>First Arabic render, slot-fitted.</p><audio controls preload="none" src="audio/05-dub-arabic-seg1.wav"></audio><audio controls preload="none" src="audio/06-dub-arabic-seg2.wav"></audio></div>
-    <div class="card"><h3>08 · Arabic v2, natural rate (15.4s)</h3><p>Fixed wording, no speedup. Compare with 05–06.</p><audio controls preload="none" src="audio/08-dub-arabic-v2-natural-rate.wav"></audio></div>
+    <div class="card"><h3>05–06 · Arabic segments, stopped (6.0s + 8.7s)</h3><p>First Arabic render, slot-fitted — superseded.</p><audio controls preload="none" src="audio/stopped-05-dub-arabic-seg1.wav"></audio><audio controls preload="none" src="audio/stopped-06-dub-arabic-seg2.wav"></audio></div>
+    <div class="card"><h3>08 · Arabic v2 natural rate, stopped (15.4s)</h3><p>Fixed wording, no speedup. Compare with 05–06.</p><audio controls preload="none" src="audio/stopped-08-dub-arabic-v2-natural-rate.wav"></audio></div>
     <div class="card"><h3>07 · Lighthouse audiobook (0:59)</h3><p>Chapters, pauses, laughter and sigh markup.</p><audio controls preload="none" src="audio/07-lighthouse-story.mp3"></audio></div>
     <div class="card"><h3>09 · Pirate &amp; Pixie, 3 voices (0:24)</h3><p>Narrator + villain + child, one render.</p><audio controls preload="none" src="audio/09-pirate-and-pixie-3voices.mp3"></audio></div>
     <div class="card"><h3>10–13 · Design Guy sessions</h3><p>Trailer, ad, story opening, secret — same voice.</p><audio controls preload="none" src="audio/10-design-guy-trailer.wav"></audio><audio controls preload="none" src="audio/11-design-guy-ad.wav"></audio><audio controls preload="none" src="audio/12-design-guy-story.wav"></audio><audio controls preload="none" src="audio/13-design-guy-secret.wav"></audio></div>
+    <div class="card"><h3>15 · MSA v2, the best (8.7s)</h3><p>Full tashkeel + Latin brand. Article and emphatic-S fixed.</p><audio controls preload="none" src="audio/15-standard-arabic-v2-diacritized.wav"></audio></div>
+    <div class="card"><h3>17–21 · Same MSA script, 6 voices</h3><p>Demo, Design Guy, Clone Test, Whisper, Pixie, Crusty.</p><audio controls preload="none" src="audio/17-standard-arabic-v2-design-guy.wav"></audio><audio controls preload="none" src="audio/18-standard-arabic-v2-playwright-test.wav"></audio><audio controls preload="none" src="audio/19-standard-arabic-v2-canadian-whisper.wav"></audio><audio controls preload="none" src="audio/20-standard-arabic-v2-pixie.wav"></audio><audio controls preload="none" src="audio/21-standard-arabic-v2-crusty.wav"></audio></div>
+    <div class="card"><h3>22 · MSA news bulletin (18.2s)</h3><p>Formal bulletin, full i'rab. The MSA control.</p><audio controls preload="none" src="audio/22-arabic-arb-country.wav"></audio></div>
+    <div class="card"><h3>43 · v2 algorithm proof (12.4s)</h3><p>Same recipe on brand-new words: تجربة, خطوة, ثابتة.</p><audio controls preload="none" src="audio/43-standard-arabic-v2-new-text-proof.wav"></audio></div>
+    <div class="card"><h3>44–45 · Native voices I (EGY, Najdi)</h3><p>Cairo cafe + Riyadh invite, same-language cloning.</p><audio controls preload="none" src="audio/44-egyptian-native-voice.wav"></audio><audio controls preload="none" src="audio/45-najdi-native-voice.wav"></audio></div>
+    <div class="card"><h3>46–51 · Native voices II</h3><p>Algerian, Iraqi, Moroccan, Gulf, Levantine, Tunisian — each speaking its own dialect.</p><audio controls preload="none" src="audio/46-arabic-arq-native-voice.wav"></audio><audio controls preload="none" src="audio/47-arabic-acm-native-voice.wav"></audio><audio controls preload="none" src="audio/48-arabic-ary-native-voice.wav"></audio><audio controls preload="none" src="audio/49-arabic-afb-native-voice.wav"></audio><audio controls preload="none" src="audio/50-arabic-apc-native-voice.wav"></audio><audio controls preload="none" src="audio/51-arabic-aeb-native-voice.wav"></audio></div>
   </div>
 </section>
 
@@ -103,7 +109,9 @@
     <tr><td>🎨 Design</td><td>Invent a voice from words</td><td>audio/02</td></tr>
     <tr><td>⚡ Presets</td><td>8 instant English voices, CPU</td><td>audio/03</td></tr>
     <tr><td>🎞️ Dub ES</td><td>Video in Spanish, fully local</td><td>audio/04</td></tr>
-    <tr><td>🌍 Dub AR</td><td>Arabic speech + natural timing fix</td><td>audio/05–06, 08</td></tr>
+    <tr><td>🌍 Dub AR</td><td>Arabic speech + natural timing fix (stopped)</td><td>audio/stopped-05–06, stopped-08</td></tr>
+    <tr><td>🔤 MSA</td><td>Diacritized standard Arabic, 6 voices + proof</td><td>audio/15, 17–22, 43</td></tr>
+    <tr><td>🗣️ Native dialects</td><td>8 dialects, native voices, same-language</td><td>audio/44–51</td></tr>
     <tr><td>🎧 Transcribe</td><td>3 engines, same clips compared</td><td>README §6</td></tr>
     <tr><td>📖 Stories</td><td>Multi-voice scripts → M4B</td><td>audio/07, 09</td></tr>
   </table>
